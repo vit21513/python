@@ -1,14 +1,17 @@
-bremen_musicians = ['Кот', 'Пёс', 'Трубадур', 'Осёл', 'Петух', "Балбес"]
-# Код цикла
-for animal in bremen_musicians:
-    # Каждый элемент списка bremen_musicians 
-    # по очереди будет передан в переменную musician
-    # и напечатан
-    print(animal)
+from tracemalloc import start
 
-# Код, который выполняется после цикла
-print('Нам дворцов заманчивые своды не заменят никогда свободы!')
 
-if animal=="cat":
-    zver = animal+"boo"
-    
+n = list(range(1,21))
+#b=n.copy()
+#  или b = n[start:stop:step:]
+b=n[::]
+m = []
+for i in n:
+    if i %2 == 0:
+        m.append(i)
+        n.remove(i)
+  
+else:
+    print(m)
+    print(n)
+    print (b)
