@@ -5,7 +5,7 @@ spisok =[]
 fils =[]
 #('D:\\тест', ['1', '2'], ['1.bmp', '2.bmp', 'первй.txt'])
 
-for adres,dirs,files in os.walk ("D:\\тест"):
+for adres,dirs,files in os.walk ("c:\\"):
    #spisok.append(adres)
    for file in files:
     #spisok.append(os.path.join(adres,file)) # в список все файлы 

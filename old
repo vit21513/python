@@ -73,6 +73,15 @@ while num <= a:
 #782 -> 8#
 
 
+a = int(input("Введите число "))
+
+c= int((a/10)%10)
+
+print (c)
+  
+
+
+
 a= input("введите трехзначное число =")
 
 if int(a)<100:
@@ -98,3 +107,67 @@ while count < len(n):
     count=count+1
 print (c)
 
+
+
+a = [13, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+
+
+index =0
+size= len(a)
+
+while index<size -1:
+  if (a[index] <5):
+    print (a[index])
+  index+=1  
+
+
+for n in a:
+  if (n<5):
+    print (n)
+
+ 
+ 
+ 
+ a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+#Нужно вернуть список, который состоит из элементов, общих для этих двух списков.
+
+result = list(filter(lambda elem: elem in b, a))
+print(result)
+
+a = [4, 4, 3, 4, 99, 99, 3, 3, 123, 3, 3, 3]
+
+
+
+maxindex = len(a)
+index = 0
+
+while index < maxindex:
+    c = a.count(a[index])
+    if c == 1:
+        print("не повторяющийся элемен =", a[index])
+    index +=1
+
+
+
+a = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+alf = list(a)
+
+alf[6] = "ь"
+print(alf)
+
+maxindex = len(a)
+index = 0
+count =0
+
+while index < maxindex:
+    c = alf.count(alf[index])
+   
+    if c == 2:
+      count +=1
+      if count ==1:
+        print(" повторяющийся элемен =", alf[index])
+    index +=1
