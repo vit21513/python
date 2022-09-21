@@ -7,24 +7,21 @@
 #- x=2; y=4-> 1
 #- x=-34; y=-30 -> 3
 
-x1 = int(input("введите координату х="))
-y1 = int(input("введите координату у="))
-
-
-
+x_coord = int(input("введите координату х="))
+y_coord = int(input("введите координату у="))
 
 
 def quarter(x,y):
-    if x>0 and y>0:
+    if (x>0 and y>0):
         print("первая четверть")
-    elif x<0 and y>0:
+    elif (x<0 and y>0):
         print("вторая четверть") 
-    elif x<0 and y<0:
+    elif (x<0 and y<0):
         print("третья четверть")
     else:
         print("четвертая четверть")
 
 
-quarter(x1,y1)
+quarter(x_coord,y_coord)
              
               

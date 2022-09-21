@@ -128,3 +128,20 @@ result = round(10.25)  # 10.0
 result = round(10.25, 1)  # 10.2
 Если функция в Python принимает необязательные аргументы, то они всегда стоят после обязательных. Их количество может быть любым. Это зависит от самой функции, но они всегда идут рядом и в конце списка аргументов.
 
+
+
+def truncate(text, length):
+    # BEGIN
+    result = f"{text[0:length]}..."
+    return result
+    # END
+
+
+    numcard = "1234144423415552341234"
+ 
+
+def get_hidden_card(card_number, stars_count=4):
+    visible_digits = card_number[-4:]
+    return f'{"*" * stars_count}{visible_digits}'
+
+print(get_hidden_card(numcard))

@@ -1,23 +1,58 @@
-from hashlib import new
 
 
-def filter_list(l):
-        for i in li:
-                
-                for j in li:
-                        if type(j)== str:
-                                l.remove(j)
-        return l    
-            
-            
-    
-#filter_list([1,2,'a','b']) == [1,2]
+
+
+num = int(input('введите число '))
+
+
+def printNum (number):
+    number=abs(number)
+    first = number*-1
+    sec = number
+    while first <= sec: 
+        print(f'{first},',end="")
+        first+=1
+
+printNum(num)
+
+
+#Найти максимальное из пяти чисел.
+
+
+a= [5,71,9,3,22]
+
+def find_max_number(list):
+    maxindex = len(list)-1
+    index=0
+    max = list[0]
+    while index <= maxindex: 
+        if a[index]>max:
+            max = a[index]
+        index+=1
+    return max         
+
+print(find_max_number(a))
+
+
+#Показать первую цифру дробной части числа.
+
+
+
+num= float(input('Введите число '))
+round_num= int(num) 
+
+res = ((num -round_num)*10)
+
+print(f' первая цифра дробной части {int(res)}')
+
+
 #
-filter_list1 =[1,'a','b',0,"vb",15,"55h"] # == [1,0,15]
-#filter_list1 = [1,2,'aasf','1','123',123]
-sortyy=[1,'a','b',0,"vb",15,"55h"]  #11
-#print(filter_list(filter_list1))
-print(filter_list(sortyy))
+#5. Дано число. Проверить кратно ли оно 5 и 10 или 15, но не 30.
+#
 
 
-test2 =([1, 'a', 'b', 0, 15]), [1, 0, 15]
+
+
+
+
+#Дано число обозначающее день недели. Вывести его название и указать является ли он выходным.
