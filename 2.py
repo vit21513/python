@@ -1,18 +1,13 @@
 
-import math
+num = int(input('введите число '))
 
 
-num1=int(input("Введите 1 число "))
+def printNum (number):
+    number=abs(number)
+    first = number*-1
+    sec = number
+    while first <= sec: 
+        print(f'{first},',end="")
+        first+=1
 
-num2= int(input("Введите 2 число "))
-
-
-def sqr_num(a,b):
-    res= a*b
-
-    if a == b*b:
-        print(f" число,{a}, является квадратом, {b}") 
-    else:
-        print(f" число,{a}, не является квадратом, {b}")
-
-sqr_num(num1,num2)
+printNum(num)
