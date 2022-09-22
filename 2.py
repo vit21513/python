@@ -1,18 +1,19 @@
 
-import math
+#10. Найти расстояние между двумя точками пространства.
+
+x_coord = float(input("введите координату первого числа х="))
+y_coord = float(input("введите координату первого числа у="))
+x_coord2 = float(input("введите координату второго числа х="))
+y_coord2 = float(input("введите координату второго числа у="))
 
 
-num1=int(input("Введите 1 число "))
+def lens(x1, y1, x2, y2):
+    res = round(((x2 - x1) ** 2 + ((y2 - y1)) ** 2) ** 0.5, 2)
+    return res
 
-num2= int(input("Введите 2 число "))
+
+result = lens(x_coord, y_coord, x_coord2, y_coord2)
 
 
-def sqr_num(a,b):
-    res= a*b
+print(result)
 
-    if a == b*b:
-        print(f" число,{a}, является квадратом, {b}") 
-    else:
-        print(f" число,{a}, не является квадратом, {b}")
-
-sqr_num(num1,num2)
