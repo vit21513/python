@@ -1,34 +1,19 @@
 
-<<<<<<< HEAD
-num = int(input('введите число '))
+
+s1= 'привет страна далекая'
+s2=',ehfnbyj'
+a=s1+s2
+b= list(a)
+print(b)
+
+print(''.join([s1, s2]))
+l=''.join([s1, s2])
+print(l)
+
+def join_strs_better(strs):
+
+    return ''.join(strs)
 
 
-def printNum (number):
-    number=abs(number)
-    first = number*-1
-    sec = number
-    while first <= sec: 
-        print(f'{first},',end="")
-        first+=1
-
-printNum(num)
-=======
-#10. Найти расстояние между двумя точками пространства.
-
-x_coord = float(input("введите координату первого числа х="))
-y_coord = float(input("введите координату первого числа у="))
-x_coord2 = float(input("введите координату второго числа х="))
-y_coord2 = float(input("введите координату второго числа у="))
-
-
-def lens(x1, y1, x2, y2):
-    res = round(((x2 - x1) ** 2 + ((y2 - y1)) ** 2) ** 0.5, 2)
-    return res
-
-
-result = lens(x_coord, y_coord, x_coord2, y_coord2)
-
-
-print(result)
-
->>>>>>> 9a98f3ffbc8a816bfcafe9fba7ca744a2b780764
+fin = join_strs_better(b) 
+print(fin)    

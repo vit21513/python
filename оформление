@@ -53,3 +53,6 @@ text = f'''{a} и {b}
 print(f'''Do you want to eat, {stark}?
 Yes, I'm hungry, mom.''')
 # END
+
+
+print(*result,sep=',')     # распаковка списка  . sep =',' разделитель
