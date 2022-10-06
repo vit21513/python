@@ -1,27 +1,20 @@
-#Напишите программу, которая принимает на вход координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0 и выдаёт номер четверти
-#  плоскости, в которой находится эта точка (или на какой оси она находится).
-
-#Пример:
-
-#- x=34; y=-30 -> 4
-#- x=2; y=4-> 1
-#- x=-34; y=-30 -> 3
-
-x_coord = int(input("введите координату х="))
-y_coord = int(input("введите координату у="))
+# def num_to_bin(nem):
+#     res = ''
+#     if nem == 0:
+#         return
+#     else:
+#         res = res+str(nem % 2)
+#         num_to_bin(nem//2)
+#         print(res, end='')
+#     return
 
 
-def quarter(x,y):
-    if (x>0 and y>0):
-        print("первая четверть")
-    elif (x<0 and y>0):
-        print("вторая четверть") 
-    elif (x<0 and y<0):
-        print("третья четверть")
-    else:
-        print("четвертая четверть")
+# number = int(input("Введите число:"))
+
+# num_to_bin(number)
+
+i=9.5
 
 
-quarter(x_coord,y_coord)
-             
-              
+if isinstance(i, float):
+    print('yes')

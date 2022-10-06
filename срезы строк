@@ -117,10 +117,17 @@ def join_strs_better(strs):
     return ''.join(strs)
 
 
+Разобрать строку на слова: метод split()
+
+
+
 fin = join_strs_better(b) 
 print(fin)    
 
+j= 'хорошо,гудять,по,белу,свету'
 
+n= j.split(',')
+print(n)
 
 # r.isdigit()  проверяет строк на цифру 
  

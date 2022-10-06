@@ -1,19 +1,36 @@
 
 
-s1= 'привет страна далекая'
-s2=',ehfnbyj'
-a=s1+s2
-b= list(a)
-print(b)
-
-print(''.join([s1, s2]))
-l=''.join([s1, s2])
-print(l)
-
-def join_strs_better(strs):
-
-    return ''.join(strs)
+# def printt(text):
+#     if len(text) !=0:
+#         print(text[-1],end=' ')
+        
+#         printt(text[:-1])
+#     return 1    
+          
+# printt('вышел bbb')
 
 
-fin = join_strs_better(b) 
-print(fin)    
+
+
+# def printt(text):
+#     if len(text) !=0:
+#         print(text[0])
+#         printt(text[1:])
+#     return 1    
+          
+# printt('вышел bbb')
+
+
+
+def deximal(num):
+    if num%2 ==1:
+        return 1
+    else: 
+        print (num%2)
+        # print(deximal(num))
+        
+
+        
+
+# print(deximal(210)) 
+print (11%2)
