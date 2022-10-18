@@ -1,10 +1,12 @@
 
+
 import sqlite3
+
 bd= sqlite3.connect("Data_base.db")
 cursor = bd.cursor()
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS personal(
-    id INTEGER PRIMARY KEY autoincrement,
+    id integer primary key AUTOINCREMENT,
     name TEXT,
     last_name TEXT,
     position TEXT,
@@ -26,65 +28,86 @@ except:
     print('Данные уже есть')
 
 
-# for i in cursor.execute('SELECT * FROM personal'):
-#     print(*i)
-
-# cursor.execute('DELETE from personal WHERE id=1')
-
-# cursor.execute('select * from personal WHERE name LIKE "Олег";')
-# # one= cursor.fetchmany()
-# # print(*one)
-
-# cursor.execute('select * from personal WHERE id=2;')
-# one= cursor.fetchone()
-# print(one)
-
 
 
 def previev_base():
+    print("""
+|---База данных сотрудников компании-------|
+--------------------------------------------
+    """)
     for i in cursor.execute('SELECT * FROM personal'):
         print(*i)
+    print("""
+--------------------------------------------
+    """)    
+
 
 
 def add_record():
-    pass
 
-def find_record(column,nam):
-    column = input('Введите критерий поиска по фамилии введите 1, по имени 2, по должности 3')
-    
+    try:
+        id = input('Введите номер записи:')
+        nam = input('Введите имя сотрудника :').capitalize()
+        last_na=input('Введите фамилию сотрудника :').capitalize()
+        position= input('Введите должность сотрудника :')
+        sal= input('Введите размер заработной платы сотрудника :')
+        bon= input('Введите размер премии сотрудника :')
+        cursor.execute('INSERT INTO personal VALUES(?,?,?,?,?,?)',(id, nam, last_na, position, sal,bon))
+        bd.commit()
+    except:
+        print('Некоректный номер записи либо данные уже есть')
 
+def find_record():
+    nam = input('Введите фамилию сотрудника :').capitalize()
+    cursor.execute(f'select * from personal WHERE last_name LIKE "{nam}";')
+    result= cursor.fetchall()
+    if result == []:
+        print(f"Сотрудник c фамилией {nam} в базе отсутствует ")
+    else:
+        for i in result:
+            print(*i)
+   
 
-
-    cursor.execute(f'select * from personal WHERE {column} LIKE {nam};')
-    one= cursor.fetchmany()
-    return one
-
-def delete_record(id):
-    cursor.execute(f'DELETE from personal WHERE id={id}')
+def delete_record():
+    previev_base()
+    nam = input('Введите номер записи которую необходимо удалить :')
+    cursor.execute(f'DELETE from personal WHERE id={nam};')
     bd.commit()
+    
+      
+
 
 def edit_record():
-    pass
-
-
-
-# for i in cursor.execute('SELECT * FROM personal'):
-#     print(*i)
+    
+    previev_base()
+    try:
+        id = input("Выберите id записи:")
+        zp = input("Ввведите новый размер зарплаты:")
+        premia = input("Ввведите новый размер премии :") 
+        cursor.execute(f'UPDATE personal SET salary={zp} WHERE id={id};')
+        cursor.execute(f'UPDATE personal SET bonus ={premia} WHERE id={id};')
+        bd.commit()
+        print("Изменения внесены")
+    except:
+        print("Вы ввели не коректные значения")
+    
+   
 
 
 def input_choice():
     
     while True:
+
         user_choice= input('''
-       ______________________________ 
-      |                              | 
-      |  1- просмотреть базу         |
-      |  2- добавить запись          |
-      |  3- удалить запись           | 
-      |  4- найти по Ф.И.О:          | 
-      |  5-откорректировать значение |
-      |  q- выход                    |
-      |______________________________|
+       _______________________________ 
+      |                               | 
+      |  1- просмотреть базу          |
+      |  2- добавить запись           |
+      |  3- удалить запись            | 
+      |  4- найти по Ф.И.О:           | 
+      |  5- изменить зарплату,премию  |
+      |  q- выход                     |
+      |_______________________________|
       
       ''')
         if user_choice == "1":
@@ -97,7 +120,7 @@ def input_choice():
             find_record()
         elif user_choice == "5":
             edit_record()    
-        elif user_choice == "q" or "Q":
+        elif user_choice.lower() == "q":
             print('Выход')
             break
         else:
@@ -105,11 +128,4 @@ def input_choice():
 
                   
 
-
-# cursor.execute('UPDATE personal SET salary = 55000 WHERE id=2;')
-# bd.commit()
-
-for i in cursor.execute('SELECT * FROM personal'):
-    print(*i)
-
-    
+input_choice()
