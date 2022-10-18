@@ -1,24 +1,41 @@
 
-# 1. В файле находится N натуральных чисел, записанных через пробел. 
-# Среди чисел не хватает одного, чтобы выполнялось условие A[i] - 1 = A[i-1]. Найдите это число.
+not_compres_text = "WWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW"
 
-stroka="4 5 6 7 10 9"
-
-result= stroka.split(" ")
-print(result)
+compres_text = "9W3B24W1B14W"
 
 
+def compres_rle(text):
 
-def sort(strol):
-    res=[]
-    for i in range(len(strol)-1):
-        if int(strol[i-1])==int(strol[i])-1:
-            res.append(strol[i])
-        strol=res
-    return strol   
+    
+    result = ''
+    pred_simbol = ''
+    index = 1
+    for char in text:
+        if char != pred_simbol:
+            if pred_simbol:
+                result += str(index) + pred_simbol
+            index = 1
+            pred_simbol = char
+        else:
+            index += 1
+    else:
+        result += str(index)+pred_simbol
+    return result
 
-zz=map(sort,stroka)
 
-# print(sort(result))
-print(list(zz))
+def decompress_text(text):
 
+    result = ''
+    index = ''
+    for char in text:
+        if char.isdigit():
+            index += char
+        else:
+            result += char*int(index)
+            index = ''
+    return result
+
+
+print(compres_rle(not_compres_text))
+
+print(decompress_text(compres_text))

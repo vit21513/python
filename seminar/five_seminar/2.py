@@ -2,19 +2,20 @@
 import csv
 
 
-text= 'начало сабвук керн укенр мабв бваав в абв сабв конец'
+text= 'начало самозабвенность текста включает зимбабве  абзац в абв абвер листе '
 zx= text.split()
 print(zx) 
 cx=[]
 
-for i in range(len(zx)-1):
+for i in range(len(zx)):
          
     if "абв" in zx[i]:
         continue
     else:
         cx.append(zx[i])
+    res=' '.join(cx)    
 
 
 
 
-print(cx) 
+print(res) 
