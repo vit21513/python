@@ -13,7 +13,7 @@ from functools import wraps
 def decorator(func):
     def wrapper(*args, **kwargs):
         
-        print(f"Результат функции {func.__name__} при  n = {''.join(map(str, args))} составляет = ",end="")
+        print(f"Кеш функции при  n = {''.join(map(str, args))} составляет = ",end="")
         return func(*args, **kwargs)
         
     return wrapper    
@@ -21,10 +21,8 @@ def decorator(func):
 
 def cacher(func):
     cach = {}
-
-    # @wraps(func)
     def wrapper(*args):
-        key = args                                #5-4
+        key =''.join(map(str, args))                           #
         if key not in cach:
             cach[key] = func(*args)
         print(cach)
@@ -47,7 +45,7 @@ def timer(func):
 
 
 
-decorator
+@decorator
 # #timer
 @cacher
 
@@ -66,22 +64,24 @@ def main():
     # print(seq(3))
     # print(seq(2))
     # print(seq(1))
-    # seq(1)
-    # seq(2)
-    # seq(3)
+    seq(1)
+    seq(2)
+    seq(3)
     seq(4)
-    # seq(3)
-    # seq(2)
-    # seq(1)
+    seq(3)
+    seq(2)
+    seq(1)
     timer(seq(4))
 
 
 
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
 
 
-c= (1,2,3,4,5,6)
+# c= (1,2,3,4,5,6)
 
-a=list(c)
+# a=list(c)
+# map(str,a)
+# print(a)
